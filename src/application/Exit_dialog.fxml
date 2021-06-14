@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <AnchorPane prefHeight="200.0" prefWidth="488.0">
+         <children>
+            <Label layoutX="145.0" layoutY="57.0" prefHeight="35.0" prefWidth="199.0" text="종료하시겠습니까?">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnYes" layoutX="95.0" layoutY="127.0" mnemonicParsing="false" text="예" />
+            <Button fx:id="btnNo" layoutX="335.0" layoutY="127.0" mnemonicParsing="false" text="아니오" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

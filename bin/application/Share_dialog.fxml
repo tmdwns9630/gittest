@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8">
+   <children>
+      <AnchorPane prefHeight="620.0" prefWidth="684.0" />
+   </children>
+</AnchorPane>
+function snsShare(snsName, link, title) {
+
+   if (title === null) return false;
+
+   var snsPopUp;
+   var _width = '500';
+   var _height = '450';
+   var _left = Math.ceil(( window.screen.width - _width )/2);
+   var _top = Math.ceil(( window.screen.height - _height )/2);
+
+   switch(snsName){
+      case 'facebook':
+         snsPopUp = window.open("http://www.facebook.com/sharer/sharer.php?u=" + link, '', 'width='+ _width +', height='+ _height +', left=' + _left + ', top='+ _top);
+         break;
+
+      case 'twitter' :
+         snsPopUp = window.open("http://twitter.com/intent/tweet?url=" + link + "&text=" + title, '', 'width='+ _width +', height='+ _height +', left=' + _left + ', top='+ _top);
+         break;
+
+      case 'kakao' :
+         snsPopUp = window.open("https://story.kakao.com/share?url=" + link, '', 'width='+ _width +', height='+ _height +', left=' + _left + ', top='+ _top);
+         break;
+
+      case 'addurl' :
+         var dummy = document.createElement("textarea");
+         document.body.appendChild(dummy);
+         dummy.value = link;
+         dummy.select();
+         document.execCommand("copy");
+         document.body.removeChild(dummy);
+         oneBtnModal("URL이 클립보드에 복사되었습니다.");
+         break;
+   }
+}
